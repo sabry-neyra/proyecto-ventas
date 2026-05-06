@@ -1,0 +1,20 @@
+{
+  "name": "proyecto-ventas",
+  "version": "1.0.0",
+  "description": "- sabrina neyra\r - luis baigorri \r - fabrizio liberatore",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sabry-neyra/proyecto-ventas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sabry-neyra/proyecto-ventas/issues"
+  },
+  "homepage": "https://github.com/sabry-neyra/proyecto-ventas#readme"
+}
