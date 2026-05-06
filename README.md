@@ -2,7 +2,7 @@
 
 ## Integrantes
 - sabrina neyra
-- luis michel  
+- luis baigorri 
 - fabrizio liberatore
 
 ## Team Leader
