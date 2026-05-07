@@ -5,6 +5,12 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+let productos = [
+  { nombre: "Mouse", stock: 10, precio: 5000 },
+  { nombre: "Teclado", stock: 5, precio: 12000 },
+  { nombre: "Monitor", stock: 3, precio: 80000 }
+];
+
 function mostrarMenu() {
   console.log("\n=== SISTEMA DE VENTAS ===");
   console.log("1- Registrar venta");
@@ -12,7 +18,7 @@ function mostrarMenu() {
   console.log("3- Salir");
 
   rl.question("Seleccione una opción: ", (opcion) => {
-    
+
     switch(opcion) {
       case "1":
         registrarVenta();
@@ -40,7 +46,16 @@ function registrarVenta() {
 }
 
 function verStock() {
-  console.log("Mostrando stock");
+  console.log("\n=== STOCK ===");
+
+  productos.forEach((producto) => {
+    console.log(
+      producto.nombre +
+      " | Stock: " + producto.stock +
+      " | Precio: $" + producto.precio
+    );
+  });
+
   mostrarMenu();
 }
 
