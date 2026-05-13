@@ -8,7 +8,7 @@ const rl = readline.createInterface({
 let productos = [
   { nombre: "Mouse inalambrico", stock: 10, precio: 5000 },
   { nombre: "Teclado inalambrico", stock: 5, precio: 12000 },
-  { nombre: "Monitor", stock: 3, precio: 80000 }
+  { nombre: "Monitor en branch", stock: 3, precio: 80000 }
 ];
 
 function mostrarMenu() {
