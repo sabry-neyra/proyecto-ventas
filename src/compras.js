@@ -5,4 +5,6 @@ function registrarCompra(producto, cantidad) {
     console.log("Cantidad comprada:", cantidad);
 }
 
-registrarCompra("Teclado", 5);
+module.exports = {
+    registrarCompra
+};
