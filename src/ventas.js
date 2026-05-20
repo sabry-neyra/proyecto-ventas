@@ -5,4 +5,3 @@ function registrarVenta(producto, cantidad) {
     console.log("Cantidad vendida:", cantidad);
 }
 
-registrarVenta("Mouse", 2);
