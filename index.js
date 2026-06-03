@@ -1,62 +1,56 @@
 const readline = require("readline");
 
+const VentaService = require("./src/services/VentaService");
+const CompraService = require("./src/services/CompraService");
+const ProductoService = require("./src/services/ProductoService");
+
+const ventaService = new VentaService();
+const compraService = new CompraService();
+const productoService = new ProductoService();
+
 const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
+    input: process.stdin,
+    output: process.stdout
 });
 
-let productos = [
-  { nombre: "Mouse inalambrico", stock: 10, precio: 5000 },
-  { nombre: "Teclado inalambrico", stock: 5, precio: 12000 },
-  { nombre: "Monitor en branch", stock: 3, precio: 80000 }
-];
-
 function mostrarMenu() {
-  console.log("\n=== SISTEMA DE VENTAS ===");
-  console.log("1- Registrar venta");
-  console.log("2- Ver stock");
-  console.log("3- Salir");
 
-  rl.question("Seleccione una opción: ", (opcion) => {
+    console.log("\n=== SISTEMA DE GESTIÓN DE VENTAS ===");
+    console.log("1 - Registrar venta");
+    console.log("2 - Registrar compra");
+    console.log("3 - Ver stock");
+    console.log("4 - Salir");
 
-    switch(opcion) {
-      case "1":
-        registrarVenta();
-        break;
+    rl.question("Seleccione una opción: ", (opcion) => {
 
-      case "2":
-        verStock();
-        break;
+        switch (opcion) {
 
-      case "3":
-        console.log("Saliendo...");
-        rl.close();
-        break;
+            case "1":
+                ventaService.registrarVenta("P001", 2);
+                mostrarMenu();
+                break;
 
-      default:
-        console.log("Opción inválida");
-        mostrarMenu();
-    }
-  });
-}
+            case "2":
+                compraService.registrarCompra("P001", 5);
+                mostrarMenu();
+                break;
 
-function registrarVenta() {
-  console.log("Venta registrada");
-  mostrarMenu();
-}
+            case "3":
+                productoService.mostrarStock();
+                mostrarMenu();
+                break;
 
-function verStock() {
-  console.log("\n=== STOCK ===");
+            case "4":
+                console.log("Saliendo...");
+                rl.close();
+                break;
 
-  productos.forEach((producto) => {
-    console.log(
-      producto.nombre +
-      " | Stock: " + producto.stock +
-      " | Precio: $" + producto.precio
-    );
-  });
+            default:
+                console.log("Opción inválida");
+                mostrarMenu();
+        }
 
-  mostrarMenu();
+    });
 }
 
 mostrarMenu();
