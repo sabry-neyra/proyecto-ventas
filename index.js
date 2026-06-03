@@ -49,7 +49,6 @@ function mostrarMenu() {
                 console.log("Opción inválida");
                 mostrarMenu();
         }
-
     });
 }
 
